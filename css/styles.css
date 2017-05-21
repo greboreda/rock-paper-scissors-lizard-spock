@@ -1,0 +1,11 @@
+.option-button {
+	text-transform: capitalize;
+}
+
+.top-buffer {
+	margin-top: 2em;
+}
+
+.bottom-buffer {
+	margin-bottom: 1em;
+}
