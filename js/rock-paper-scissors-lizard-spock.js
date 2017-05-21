@@ -48,7 +48,7 @@ var rockPaperScissorsLizardSpockManager = (function(){
 	}
 	this.Option.prototype.wins = function(oponent) {
 		if(oponent.name === this.name) {
-			return { result: messages.TIE};
+			return { result: messages.TIE };
 		}
 		var winning = this.getWinning(oponent);
 		if(!winning) {
@@ -135,15 +135,20 @@ var rockPaperScissorsLizardSpockManager = (function(){
 		
 		var r = p1.wins(p2);
 		if(r.result === messages.TIE) {
+			var message = p1.name + ' ties vs ' + p2.name;
 			return {
 				winner: messages.TIE,
-				message: p1.name + ' ties vs ' + p2.name
+				message: message,
+				repr: 'There is no winner! ' + message
 			};
 		} else {
+			var winner = r.result === true ? "PLAYER 1" : "PLAYER 2";
+			var value = r.result === true ? p1.name : p2.name;
 			return {
-				winner: r.result === true ? "PLAYER 1" : "PLAYER 2",
-				value: r.result === true ? p1.name : p2.name,
-				message: r.message
+				winner: winner,
+				value: value,
+				message: r.message,
+				repr: winner + ' wins with ' + value + ' because ' + r.message + '!'
 			};
 		}
 	}
