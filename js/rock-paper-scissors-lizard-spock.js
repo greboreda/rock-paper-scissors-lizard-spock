@@ -83,8 +83,8 @@ var rockPaperScissorsLizardSpockManager = (function(){
 	function Scissors() {
 		this.name = names.SCISSORS;
 		this.winnings =  [
-		{ name: names.PAPER,		message: messages.SCISSORS_CUTS_PAPER },
-		{ name: names.LIZARD,		message: messages.SCISSORS_DECAPITATES_LIZARD }
+			{ name: names.PAPER,		message: messages.SCISSORS_CUTS_PAPER },
+			{ name: names.LIZARD,		message: messages.SCISSORS_DECAPITATES_LIZARD }
 		];
 	}
 	Scissors.prototype = Object.create(this.Option.prototype);

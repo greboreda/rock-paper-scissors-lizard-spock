@@ -10,7 +10,9 @@ var pageManager = (function() {
 	};
 	
 	var containers = {
-		OPTIONS: '.options-list'
+		OPTIONS: '.options-list',
+		PLAYER1_OPTIONS: '#player1-options',
+		PLAYER2_OPTIONS: '#player2-options'
 	};
 	
 	var modals = {
@@ -45,8 +47,8 @@ var pageManager = (function() {
 				.data(dataKeys.OPTION);
 		}
 		return {
-			player1: retrievePlayerSelectedOption('#player1-options'),
-			player2: retrievePlayerSelectedOption('#player2-options'),
+			player1: retrievePlayerSelectedOption(containers.PLAYER1_OPTIONS),
+			player2: retrievePlayerSelectedOption(containers.PLAYER2_OPTIONS),
 		};
 	}
 	
@@ -78,9 +80,9 @@ var pageManager = (function() {
 		lists.each(function(index, element) {
 			var opts = rockPaperScissorsLizardSpockManager.options;
 			for(opt in opts) {
-				var $b = createOptionButton(opt);
-				$b.click(onClickOption);
-				$b.appendTo(element);
+				var $b = createOptionButton(opt)
+					.click(onClickOption)
+					.appendTo(element);
 			}
 		});
 	}
