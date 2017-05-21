@@ -2,6 +2,7 @@
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">		
 		<title>Rock Paper Scissors Lizard Spock</title>
 		<script type="text/javascript" src="js/rock-paper-scissors-lizard-spock.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -10,56 +11,61 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 		<style>
-			.option-button {
-				text-transform: capitalize;
-			};
+			.option-button { text-transform: capitalize; }
+			.top-buffer { margin-top:2em; }
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			
 			<div class="row">
-				<div class="col jumbotron">
-					<h1 class="display-4">Rock Paper Scissors Lizard Spock</h1>
-					<p>Didactic tool for develop with TDD</p>
-					<hr class="my-4">
-					<p>Run tests <a href="rock-paper-scissors-lizard-spock-test.html">here</a></p>
-					<p>Download source code <a href="https://github.com/greboreda/rock-paper-scissors-lizard-spock">here</a></p>
+				<div class="col">
+					<div class="jumbotron text-center">
+						<h1 class="display-6">Rock Paper Scissors Lizard Spock</h1>
+						<p>Didactic tool for develop with TDD</p>
+						<hr class="my-4">
+						<p>Run tests <a href="rock-paper-scissors-lizard-spock-test.html">here</a></p>
+						<p>Download source code <a href="https://github.com/greboreda/rock-paper-scissors-lizard-spock">here</a></p>
+					</div>
 				</div>
 			</div>
 
 			<div class="row">
 			
-				<div class="col-4 offset-md-3">
+				<div class="col col-md-3 offset-md-3">
 					<div class="row">
-						<div class="col-6">
-							<div class="row">
-								<h2 class="col display-6">Player 1</h2>
-							</div>
-							<div class="row">
-								<div class="col">
-									<div id="player1-options" class="list-group options-list"></div>
-								</div>
-							</div>
+						<div class="col text-center">
+							<h2 class="display-6">Player 1</h2>
 						</div>
-						<div class="col-6">
-							<div class="row">
-								<h2 class="col display-6">Player 2</h2>
-							</div>
-							<div class="row">
-								<div class="col">
-									<div id="player2-options" class="list-group options-list"></div>
-								</div>
-							</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div id="player1-options" class="list-group options-list"></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-5 align-self-center">
-					<button id="play-button" class="btn btn-primary" disabled>Play!</button>
-				</div>
 				
+				<div class="col col-md-3">
+					<div class="row">
+						<div class="col text-center">
+							<h2 class="display-6">Player 2</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col">
+							<div id="player2-options" class="list-group options-list"></div>
+						</div>
+					</div>
+				</div>
+								
 			</div>
 
+			<div class="row top-buffer">
+				<div class="col col-md-6 offset-md-3 align-self-center">
+					<button id="play-button" class="btn btn-block btn-primary btn-lg" disabled>Play!</button>
+				</div>			
+			</div>
+			
 			<div id="result-modal" class="modal fade">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
