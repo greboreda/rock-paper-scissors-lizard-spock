@@ -1,16 +1,55 @@
-var messages = {
-	TIE: 'TIE',
-	ROCK_CRUSHES_LIZARD: 'Rock crushes Lizard',
-	ROCK_CRUSHES_SCISSORS: 'Rock crushes Scissors',
-	PAPER_COVERS_ROCK: 'Paper covers Rock',
-	PAPER_DISPROVES_SPOCK: 'Paper disproves Spock',
-	SCISSORS_CUTS_PAPER: 'Scissors cuts Paper',
-	SCISSORS_DECAPITATES_LIZARD: 'Scissors decapitates Lizard',
-	LIZARD_EATS_PAPER: 'Lizard eats Paper',
-	LIZARD_POISONS_SPOCK: 'Lizard poisons Spock',
-	SPOCK_SMASHES_SCISSORS: 'Spock smashes Scissors',
-	SPOCK_VAPORIZES_ROCK: 'Spock vaporizes Rock'
-};
+var model = rockPaperScissorsLizardSpockManager.model;
+var messages = rockPaperScissorsLizardSpockManager.messages;
+
+var Rock = model.Rock;
+var Paper = model.Paper;
+var Scissors = model.Scissors;
+var Lizard = model.Lizard;
+var Spock = model.Spock;
+
+QUnit.module("rockPaperScissorsLizardSpockManager elements", function() {
+
+	QUnit.test("manager exists", function(assert) {
+		assert.ok(rockPaperScissorsLizardSpockManager, 'manager exists');
+		assert.ok(rockPaperScissorsLizardSpockManager.model, 'manager contains model');
+		assert.ok(rockPaperScissorsLizardSpockManager.messages, 'manager contains messages');
+	});
+
+});
+
+QUnit.module("Test Model", function() {
+
+	QUnit.test('Rock entity', function(assert) {
+		assert.ok(model.Rock, 'Rock is defined');
+		var e = new model.Rock();
+		assert.ok(e.wins, 'wins method defined');
+	});
+
+	QUnit.test('Paper entity', function(assert) {
+		assert.ok(model.Paper, 'Paper is defined');
+		var e = new model.Paper();
+		assert.ok(e.wins, 'wins method defined');
+	});
+
+	QUnit.test('Scissors entity', function(assert) {
+		assert.ok(model.Scissors, 'Scissors is defined');
+		var e = new model.Scissors();
+		assert.ok(e.wins, 'wins method defined');
+	});
+
+	QUnit.test('Lizard entityl', function(assert) {
+		assert.ok(model.Lizard, 'Lizard is defined');
+		var e = new model.Lizard();
+		assert.ok(e.wins, 'wins method defined');		
+	});
+	
+	QUnit.test('Spock entity', function(assert) {
+		assert.ok(model.Spock, 'Spock is defined');
+		var e = new model.Spock();
+		assert.ok(e.wins, 'wins method defined');
+	});
+
+});
 
 QUnit.module( "Rock tests", function() {
 
