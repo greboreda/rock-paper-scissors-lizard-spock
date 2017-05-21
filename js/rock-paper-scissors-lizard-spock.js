@@ -1,13 +1,17 @@
 var rockPaperScissorsLizardSpockManager = (function(){
-	
-	var names = {
-		ROCK: 'ROCK',
-		PAPER: 'PAPER',
-		SCISSORS: 'SCISSORS',
-		LIZARD: 'LIZARD',
-		SPOCK: 'SPOCK'
-	};
 
+	function getPlayers() {
+		return {
+			ROCK: 'ROCK',
+			PAPER: 'PAPER',
+			SCISSORS: 'SCISSORS',
+			LIZARD: 'LIZARD',
+			SPOCK: 'SPOCK'
+		};
+	};
+	
+	var names = getPlayers();
+	
 	function getMessages() {
 		return {
 			TIE: 'TIE',
@@ -104,19 +108,50 @@ var rockPaperScissorsLizardSpockManager = (function(){
 	}
 	Spock.prototype = Object.create(this.Option.prototype);
 
-	function getModel() {
-		return {
-			Rock: Rock,
-			Paper: Paper,
-			Scissors: Scissors,
-			Lizard: Lizard,
-			Spock: Spock
-		};
+	function getOptions() {
+		return [Rock, Paper, Scissors, Lizard, Spock];		
 	}
 	
+	function getOptionByName(name) {
+		var options = getOptions();
+		for(var i=0; i<options.length ; i++) {
+			var current = new options[i]();
+			if(current.name === name) {
+				return current;
+			}
+		}
+	}
+	
+	function play(player1, player2) {
+		
+		var p1 = getOptionByName(player1);
+		var p2 = getOptionByName(player2);
+		if(!p1 || !p2) {
+			var message = 'not valid game: ';
+			if(!p1) message += ' [ ' + player1 + ' is not defined ] ';
+			if(!p2) message += ' [ ' + player2 + ' is not defined ] ';
+			throw new Error(message);
+		}
+		
+		var r = p1.wins(p2);
+		if(r.result === messages.TIE) {
+			return {
+				winner: messages.TIE,
+				message: p1.name + ' ties vs ' + p2.name
+			};
+		} else {
+			return {
+				winner: r.result === true ? "PLAYER 1" : "PLAYER 2",
+				value: r.result === true ? p1.name : p2.name,
+				message: r.message
+			};
+		}
+	}
+		
 	return {
-		model: getModel(),
-		messages: getMessages()
+		options: getPlayers(),
+		messages: getMessages(),
+		play: play
 	};
 
 })();
