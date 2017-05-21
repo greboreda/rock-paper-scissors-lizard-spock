@@ -16,7 +16,31 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 
 	var opts = rockPaperScissorsLizardSpockManager.options;
 	var messages = rockPaperScissorsLizardSpockManager.messages;
+	
+	QUnit.module('Illegal values test', function() {
 		
+		var notValidOption = 'NOT_VALID_OPTION';
+		
+		QUnit.test('Player 1 invalid value', function(assert) {
+			assert.throws(function() {
+				rockPaperScissorsLizardSpockManager.play(notValidOption, opts.ROCK);
+			}, 'throwed error');
+		});
+
+		QUnit.test('Player 2 invalid value', function(assert) {
+			assert.throws(function() {
+				rockPaperScissorsLizardSpockManager.play(opts.ROCK, notValidOption);
+			}, 'throwed error');
+		});
+
+		QUnit.test('Player 1 and 2 invalid values', function(assert) {
+			assert.throws(function() {
+				rockPaperScissorsLizardSpockManager.play(notValidOption, notValidOption);
+			}, 'throwed error');
+		});
+		
+	});
+	
 	QUnit.module('Rock tests', function() {
 
 		QUnit.test('Rock ties vs Rock', function(assert) {
