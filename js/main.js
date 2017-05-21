@@ -13,6 +13,10 @@ var pageManager = (function() {
 		OPTIONS: '.options-list'
 	};
 	
+	var modals = {
+		RESULT: '#result-modal'
+	};
+	
 	var dataKeys = {
 		OPTION: 'option'
 	}
@@ -26,7 +30,11 @@ var pageManager = (function() {
 		$(buttons.PLAY).click(function(evt) {
 			var selectedOptions = retrieveSelectedOptions();
 			var r = rockPaperScissorsLizardSpockManager.play(selectedOptions.player1, selectedOptions.player2);
-			alert(r.repr);
+			var modal = $(modals.RESULT);
+			var p = modal.find('.modal-body').children('p');
+			p.empty();
+			p.append(r.repr);
+			modal.modal('show');
 		});
 	}
 	
