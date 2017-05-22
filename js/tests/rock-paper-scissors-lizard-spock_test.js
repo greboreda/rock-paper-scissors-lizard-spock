@@ -45,32 +45,32 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 
 		QUnit.test('Rock ties vs Rock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.ROCK);
-			assert.ok(r.winner === 'TIE', 'result is tie');
-			assert.ok(r.message === 'ROCK ties vs ROCK', 'message is the expected');
+			assert.equal(r.winner, messages.TIE);
+			assert.equal(r.message, 'ROCK ties vs ROCK');
 		});
 		QUnit.test('Rock wins vs Lizzard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.LIZARD);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.ROCK, 'value is ROCK');
-			assert.ok(r.message === messages.ROCK_CRUSHES_LIZARD, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.ROCK,);
+			assert.equal(r.message, messages.ROCK_CRUSHES_LIZARD);
 		});
 		QUnit.test('Rock wins vs Scissors', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.SCISSORS);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.ROCK, 'value is ROCK');
-			assert.ok(r.message === messages.ROCK_CRUSHES_SCISSORS, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.ROCK);
+			assert.equal(r.message, messages.ROCK_CRUSHES_SCISSORS);
 		});
 		QUnit.test('Rock looses vs Paper', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.PAPER);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.PAPER, 'value is PAPER');
-			assert.ok(r.message === messages.PAPER_COVERS_ROCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.PAPER);
+			assert.equal(r.message, messages.PAPER_COVERS_ROCK);
 		});
 		QUnit.test('Rock looses vs Spock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.SPOCK);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.SPOCK, 'value is SPOCK');
-			assert.ok(r.message === messages.SPOCK_VAPORIZES_ROCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.SPOCK);
+			assert.equal(r.message, messages.SPOCK_VAPORIZES_ROCK);
 		});
 
 	});
@@ -80,32 +80,32 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 		
 		QUnit.test('Paper ties vs Paper', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.PAPER, opts.PAPER);
-			assert.ok(r.winner === 'TIE', 'result is tie');
-			assert.ok(r.message === 'PAPER ties vs PAPER', 'message is the expected');
+			assert.equal(r.winner, messages.TIE);
+			assert.equal(r.message, 'PAPER ties vs PAPER');
 		});
 		QUnit.test('Paper wins vs Rock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.PAPER, opts.ROCK);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.PAPER, 'value is PAPER');
-			assert.ok(r.message === messages.PAPER_COVERS_ROCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.PAPER);
+			assert.equal(r.message, messages.PAPER_COVERS_ROCK);
 		});
 		QUnit.test('Paper wins vs Spock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.PAPER, opts.SPOCK);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.PAPER, 'value is PAPER');
-			assert.ok(r.message === messages.PAPER_DISPROVES_SPOCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.PAPER);
+			assert.equal(r.message, messages.PAPER_DISPROVES_SPOCK);
 		});
 		QUnit.test('Paper looses vs Lizard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.PAPER, opts.LIZARD);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.LIZARD, 'value is LIZARD');
-			assert.ok(r.message === messages.LIZARD_EATS_PAPER, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.LIZARD);
+			assert.equal(r.message, messages.LIZARD_EATS_PAPER);
 		});
 		QUnit.test('Paper looses vs Scissors', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.PAPER, opts.SCISSORS);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.SCISSORS, 'value is SCISSORS');
-			assert.ok(r.message === messages.SCISSORS_CUTS_PAPER, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.SCISSORS);
+			assert.equal(r.message, messages.SCISSORS_CUTS_PAPER);
 		});
 		
 	});
@@ -115,32 +115,32 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 		
 		QUnit.test('Scissors ties vs Scissors', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SCISSORS, opts.SCISSORS);
-			assert.ok(r.winner === 'TIE', 'result is tie');
-			assert.ok(r.message === 'SCISSORS ties vs SCISSORS', 'message is the expected');
+			assert.equal(r.winner, messages.TIE);
+			assert.equal(r.message, 'SCISSORS ties vs SCISSORS');
 		});
 		QUnit.test('Scissors wins vs Paper', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SCISSORS, opts.PAPER);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.SCISSORS, 'value is SCISSORS');
-			assert.ok(r.message === messages.SCISSORS_CUTS_PAPER, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.SCISSORS);
+			assert.equal(r.message, messages.SCISSORS_CUTS_PAPER);
 		});
 		QUnit.test('Scissors wins vs Lizard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SCISSORS, opts.LIZARD);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.SCISSORS, 'value is SCISSORS');
-			assert.ok(r.message === messages.SCISSORS_DECAPITATES_LIZARD, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.SCISSORS);
+			assert.equal(r.message, messages.SCISSORS_DECAPITATES_LIZARD);
 		});
 		QUnit.test('Scissors looses vs Rock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SCISSORS, opts.ROCK);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.ROCK, 'value is ROCK');
-			assert.ok(r.message === messages.ROCK_CRUSHES_SCISSORS, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.ROCK);
+			assert.equal(r.message, messages.ROCK_CRUSHES_SCISSORS);
 		});
 		QUnit.test('Scissors looses vs Spock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SCISSORS, opts.SPOCK);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.SPOCK, 'value is SCISSORS');
-			assert.ok(r.message === messages.SPOCK_SMASHES_SCISSORS, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.SPOCK);
+			assert.equal(r.message, messages.SPOCK_SMASHES_SCISSORS);
 		});
 		
 	});
@@ -150,32 +150,32 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 		
 		QUnit.test('Lizard ties vs Lizard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.LIZARD, opts.LIZARD);
-			assert.ok(r.winner === 'TIE', 'result is tie');
-			assert.ok(r.message === 'LIZARD ties vs LIZARD', 'message is the expected');
+			assert.equal(r.winner, messages.TIE);
+			assert.equal(r.message, 'LIZARD ties vs LIZARD');
 		});
 		QUnit.test('Lizard wins vs Paper', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.LIZARD, opts.PAPER);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.LIZARD, 'value is LIZARD');
-			assert.ok(r.message === messages.LIZARD_EATS_PAPER, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.LIZARD);
+			assert.equal(r.message, messages.LIZARD_EATS_PAPER);
 		});
 		QUnit.test('Lizard wins vs Spock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.LIZARD, opts.SPOCK);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.LIZARD, 'value is LIZARD');
-			assert.ok(r.message === messages.LIZARD_POISONS_SPOCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.LIZARD);
+			assert.equal(r.message, messages.LIZARD_POISONS_SPOCK);
 		});
 		QUnit.test('Lizard looses vs Scissors', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.LIZARD, opts.SCISSORS);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.SCISSORS, 'value is SCISSORS');
-			assert.ok(r.message === messages.SCISSORS_DECAPITATES_LIZARD, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.SCISSORS);
+			assert.equal(r.message, messages.SCISSORS_DECAPITATES_LIZARD);
 		});
 		QUnit.test('Lizard looses vs Rock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.LIZARD, opts.ROCK);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.ROCK, 'value is ROCK');
-			assert.ok(r.message === messages.ROCK_CRUSHES_LIZARD, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.ROCK);
+			assert.equal(r.message, messages.ROCK_CRUSHES_LIZARD);
 		});
 		
 	});
@@ -185,32 +185,32 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 		
 		QUnit.test('Spock ties vs Spock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SPOCK, opts.SPOCK);
-			assert.ok(r.winner === 'TIE', 'result is tie');
-			assert.ok(r.message === 'SPOCK ties vs SPOCK', 'message is the expected');
+			assert.equal(r.winner, messages.TIE);
+			assert.equal(r.message, 'SPOCK ties vs SPOCK');
 		});
 		QUnit.test('Spock wins vs Rock', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SPOCK, opts.ROCK);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.SPOCK, 'value is SPOCK');
-			assert.ok(r.message === messages.SPOCK_VAPORIZES_ROCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.SPOCK);
+			assert.equal(r.message, messages.SPOCK_VAPORIZES_ROCK);
 		});
 		QUnit.test('Spock wins vs Scissors', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SPOCK, opts.SCISSORS);
-			assert.ok(r.winner === 'PLAYER 1', 'winner is player 1');
-			assert.ok(r.value === opts.SPOCK, 'value is SPOCK');
-			assert.ok(r.message === messages.SPOCK_SMASHES_SCISSORS, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 1');
+			assert.equal(r.value, opts.SPOCK);
+			assert.equal(r.message, messages.SPOCK_SMASHES_SCISSORS);
 		});
 		QUnit.test('Spock looses vs Lizard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SPOCK, opts.LIZARD);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.LIZARD, 'value is LIZARD');
-			assert.ok(r.message === messages.LIZARD_POISONS_SPOCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.LIZARD);
+			assert.equal(r.message, messages.LIZARD_POISONS_SPOCK);
 		});
 		QUnit.test('Spock looses vs Paper', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.SPOCK, opts.PAPER);
-			assert.ok(r.winner === 'PLAYER 2', 'winner is player 2');
-			assert.ok(r.value === opts.PAPER, 'value is PAPER');
-			assert.ok(r.message === messages.PAPER_DISPROVES_SPOCK, 'message is the expected');
+			assert.equal(r.winner, 'PLAYER 2');
+			assert.equal(r.value, opts.PAPER);
+			assert.equal(r.message, messages.PAPER_DISPROVES_SPOCK);
 		});
 		
 	});
