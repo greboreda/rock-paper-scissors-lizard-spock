@@ -51,7 +51,7 @@ QUnit.module("Test rockPaperScissorsLizardSpockManager", function() {
 		QUnit.test('Rock wins vs Lizzard', function(assert) {
 			var r = rockPaperScissorsLizardSpockManager.play(opts.ROCK, opts.LIZARD);
 			assert.equal(r.winner, 'PLAYER 1');
-			assert.equal(r.value, opts.ROCK,);
+			assert.equal(r.value, opts.ROCK);
 			assert.equal(r.message, messages.ROCK_CRUSHES_LIZARD);
 		});
 		QUnit.test('Rock wins vs Scissors', function(assert) {
